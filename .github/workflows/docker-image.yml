@@ -28,8 +28,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ github.repository }}:$GITHUB_SHA
+          tags: ${{ github.repository }}:${{ github.sha }}
           build-args: |
             GIT_REPOSITORY=$GH_REPOSITORY
-            GIT_USERNAME=$GITHUB_REPOSITORY_OWNER
+            GIT_USERNAME=${{ github.repository_owner }}
             GIT_PASSWORD=${{ secrets.GH_SCS_TOKEN }}
