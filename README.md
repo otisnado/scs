@@ -1,4 +1,5 @@
 # scs
+[![ci](https://github.com/otisnado/scs/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/otisnado/scs/actions/workflows/docker-image.yml)
 
 Spring Config Server is a tool to make more easer the configuration management for application/services using HTTP protocol and API REST.
 SCS required three env vairiables to start
