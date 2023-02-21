@@ -29,3 +29,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.GITHUB_REPOSITORY }}:${{ env.GITHUB_SHA }}
+          build-args: |
+            GIT_REPOSITORY=${{ env.GH_REPOSITORY }}
+            GIT_USERNAME=${{ env.GITHUB_OWNER }}
+            GIT_PASSWORD=${{ secrets.GH_SCS_TOKEN }}
