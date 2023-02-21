@@ -33,11 +33,17 @@ EXPOSE 8080
 # Creating rootless user
 RUN adduser -D app
 
+# Setting up user
+USER app
+
 # Setting up workdir
 WORKDIR /home/app
 
+# Copying README.md for documentation
+COPY --chown=app:app README.md .
+
 # Copying .jar file to runtime stage
-COPY --from=build /src/target/*.jar .
+COPY --from=build --chown=app:app /src/target/*.jar scs.jar
 
 # Entrypoint to run container
-ENTRYPOINT [ "java", "-jar", "~/scs.jar" ]
+ENTRYPOINT [ "java", "-jar", "/home/app/scs.jar" ]
