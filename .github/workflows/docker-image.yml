@@ -30,6 +30,6 @@ jobs:
           push: true
           tags: ${{ github.repository }}:${{ github.sha }}
           build-args: |
-            GIT_REPOSITORY=$GH_REPOSITORY
+            GIT_REPOSITORY=${{ env.GH_REPOSITORY }}
             GIT_USERNAME=${{ github.repository_owner }}
             GIT_PASSWORD=${{ secrets.GH_SCS_TOKEN }}
