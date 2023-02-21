@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ env.GITHUB_OWNER }}/scs:${{ env.GITHUB_SHA }}
+          tags: $GITHUB_OWNER/scs:$GITHUB_SHA
           build-args: |
             GIT_REPOSITORY=${{ env.GH_REPOSITORY }}
             GIT_USERNAME=${{ env.GITHUB_OWNER }}
